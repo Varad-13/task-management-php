@@ -30,8 +30,8 @@ if (isset($_SESSION['user_id'])) {
     if ($result->num_rows > 0) {
         $page_content .= '<div class="table-container">';
         $page_content .= '<table class="table is-fullwidth" style="background-color:#FFFFFF; color:black;">';
+        $page_content .= '<thead><tr><th>ID</th><th>Username</th><th>Role</th><th>Actions</th></tr></thead>';
         $page_content .= '<tbody>';
-        $page_content .= '<tr><td>ID</td><td>Username</td><td>Role</td><td>Actions</td></tr>';
 
         while ($user = $result->fetch_assoc()) {
             $page_content .= '<tr>';
