@@ -55,24 +55,24 @@ $page_content = <<<EOT
     <?php endif; ?>
     <div class="columns is-centered">
         <div class="column is-4">
-            <div class="box" style="background-color:#666666;">
-                <h1 class="title" style="color:white;">Add User</h1>
+            <div class="box" style="box-shadow:0px 0px 57px 3px rgba(0,0,0,0.18); background-color:#FFFFFF;">
+                <h1 class="title" style="color:black;">Add User</h1>
                 <form action="add_user.php" method="post">
                     <!-- Add your registration form fields here -->
                     <div class="field">
-                        <label class="label" style="color:white;">Username</label>
+                        <label class="label" style="color:black;">Username</label>
                         <div class="control">
                             <input class="input" type="text" name="username" required>
                         </div>
                     </div>
                     <div class="field">
-                        <label class="label" style="color:white;">Password</label>
+                        <label class="label" style="color:black;">Password</label>
                         <div class="control">
                             <input class="input" type="password" name="password" required>
                         </div>
                     </div>
                     <div class="field">
-                        <label class="label" style="color:white;">Role</label>
+                        <label class="label" style="color:black;">Role</label>
                         <div class="control">
                             <div class="select">
                                 <select name="role" required>
@@ -86,7 +86,7 @@ $page_content = <<<EOT
                     </div>
                     <div class="field">
                         <div class="control">
-                            <button class="button is-primary" type="submit">Add User</button>
+                            <button class="button is-primary" style="color:black; font-weight:bold;" type="submit">Add User</button>
                         </div>
                     </div>
                 </form>

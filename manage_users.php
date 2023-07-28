@@ -20,7 +20,7 @@ if (isset($_SESSION['user_id'])) {
     }
 
     $page_title = 'Manage Users';
-    $page_content = '<h1 class="title">Manage Users</h1>';
+    $page_content = '<h1 class="title"style="color:white;">Manage Users</h1>';
 
     // Display a list of all users
     $stmt = $conn->prepare("SELECT * FROM users");
@@ -29,7 +29,7 @@ if (isset($_SESSION['user_id'])) {
 
     if ($result->num_rows > 0) {
         $page_content .= '<div class="table-container">';
-        $page_content .= '<table class="table is-fullwidth" style="background-color:#666666; color:white;">';
+        $page_content .= '<table class="table is-fullwidth" style="background-color:#FFFFFF; color:black;">';
         $page_content .= '<tbody>';
         $page_content .= '<tr><td>ID</td><td>Username</td><td>Role</td><td>Actions</td></tr>';
 
@@ -52,7 +52,7 @@ if (isset($_SESSION['user_id'])) {
     }
 
     // Add a button to add a new user
-    $page_content .= '<a class="button is-primary" href="add_user.php">Add New User</a>';
+    $page_content .= '<a class="button is-primary" style="color:black; font-weight:bold;" href="add_user.php">Add New User</a>';
 
 } else {
     // If the user is not logged in, redirect to the login page

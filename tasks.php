@@ -70,9 +70,9 @@ if (isset($_SESSION['user_id'])) {
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $tasks .= '<div class="coulmn" style="margin-right: 0.4rem; margin-left: 0.4rem; margin-top: 0.4rem; margin-bottom: 0.4rem; display: flex; flex-direction: column; justify-content: space-between; color:white;">';
-                $tasks .= '<div class="box" style=" min-height:18rem; min-width:18rem; background-color:#666666; color:white; " >';
-                $tasks .= '<h3 class="title" style="color:white;">' . htmlspecialchars($row['task_name']) . '</h3>';
+                $tasks .= '<div class="coulmn" style=" margin-right: 0.4rem; margin-left: 0.4rem; margin-top: 0.4rem; margin-bottom: 0.4rem; display: flex; flex-direction: column; justify-content: space-between; color:black;">';
+                $tasks .= '<div class="box" style="box-shadow:0px 0px 57px 3px rgba(0,0,0,0.18); min-height:18rem; min-width:18rem; background-color:#FFFFFF; color:black; " >';
+                $tasks .= '<h3 class="title" style="color:black;">' . htmlspecialchars($row['task_name']) . '</h3>';
                 $tasks .= '<p class="content">' . htmlspecialchars($row['task_description']) . '</p>';
                 $tasks .= '<p class="content">Status: ' . htmlspecialchars($row['status']) . '</p>';
 
@@ -88,7 +88,7 @@ if (isset($_SESSION['user_id'])) {
                 if ($user_role === 'employee' && $row['status'] === 'pending') {
                     $tasks .= '<form action="tasks.php" method="post">';
                     $tasks .= '<input type="hidden" name="task_id" value="' . $row['id'] . '">';
-                    $tasks .= '<input class="button is-primary" type="submit" name="mark_completed" value="Mark Completed">';
+                    $tasks .= '<input class="button is-primary" style="color:black; font-weight:bold;" type="submit" name="mark_completed" value="Mark Completed">';
                     $tasks .= '</form>';
                 }
 
@@ -122,14 +122,14 @@ if (isset($_SESSION['user_id'])) {
     // Display tasks based on user role
     if ($user_role === 'employee') {
         // For employees, display tasks assigned to them
-        $page_content = '<h1 class="title">My Tasks</h1>';
+        $page_content = '<h1 class="title" style="color:white;">Your Tasks</h1>';
         $page_content .= displayTasks($_SESSION['user_id'], $user_role);
     } else {
         // For admins and project managers, display all tasks
-        $page_content = '<h1 class="title">All Tasks</h1>';
-        $page_content .= '<a href="add_task.php"> <button class="button is-primary" style="font-weight: bold;">Add Task</button> </a>';
+        $page_content = '<h1 class="title" style="color:white;">All Tasks</h1>';
+        $page_content .= '<a href="add_task.php"> <button class="button is-primary" style="color:black; font-weight:bold;"">Add Task</button> </a>';
         if ($user_role == 'admin') 
-            $page_content .= '<a href="manage_users.php"> <button class="button is-primary" style="font-weight: bold;">Manage Users</button> </a>';
+            $page_content .= '<a href="manage_users.php"> <button class="button is-primary" style="color:black; font-weight:bold;">Manage Users</button> </a>';
         $page_content .= displayTasks($_SESSION['user_id'], $user_role);
     }
 } else {

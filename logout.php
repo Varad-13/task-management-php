@@ -11,9 +11,9 @@ if (isset($_SESSION['user_id'])) {
 
 $page_title = 'Signed Out';
 $page_content = <<<EOT
-    <h1 class="title">Successfully Signed out</h1>
-    <div class="notification is-success">You have been successfully signed out.</div>
-    <p><a href="index.php">Back to Home</a></p>
+    <h1 class="title" style="color:white;">Successfully Signed out</h1>
+    <div class="notification is-success" style="color:black; font-weight:bold;">You have been successfully signed out.</div>
+    <p><a href="index.php" style="color:cyan;">Back to Login</a></p>
 EOT;
 
 include 'template.php';
