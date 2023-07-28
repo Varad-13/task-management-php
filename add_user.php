@@ -47,31 +47,32 @@ $page_title = 'Add User';
 
 // Add your registration form here (similar to the login form)
 $page_content = <<<EOT
-    <h1 class="title">Add User</h1>
+    
     <!-- Display any messages from the session, if set -->
     <?php if (isset(\$_SESSION['message'])): ?>
         <p class="has-text-danger"><?php echo \$_SESSION['message']; ?></p>
         <?php unset(\$_SESSION['message']); ?>
     <?php endif; ?>
     <div class="columns is-centered">
-        <div class="column is-half">
-            <div class="box">
+        <div class="column is-4">
+            <div class="box" style="background-color:#666666;">
+                <h1 class="title" style="color:white;">Add User</h1>
                 <form action="add_user.php" method="post">
                     <!-- Add your registration form fields here -->
                     <div class="field">
-                        <label class="label">Username</label>
+                        <label class="label" style="color:white;">Username</label>
                         <div class="control">
                             <input class="input" type="text" name="username" required>
                         </div>
                     </div>
                     <div class="field">
-                        <label class="label">Password</label>
+                        <label class="label" style="color:white;">Password</label>
                         <div class="control">
                             <input class="input" type="password" name="password" required>
                         </div>
                     </div>
                     <div class="field">
-                        <label class="label">Role</label>
+                        <label class="label" style="color:white;">Role</label>
                         <div class="control">
                             <div class="select">
                                 <select name="role" required>

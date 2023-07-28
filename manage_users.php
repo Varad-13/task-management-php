@@ -29,9 +29,9 @@ if (isset($_SESSION['user_id'])) {
 
     if ($result->num_rows > 0) {
         $page_content .= '<div class="table-container">';
-        $page_content .= '<table class="table is-fullwidth">';
-        $page_content .= '<thead><tr><th>ID</th><th>Username</th><th>Role</th><th>Actions</th></tr></thead>';
+        $page_content .= '<table class="table is-fullwidth" style="background-color:#666666; color:white;">';
         $page_content .= '<tbody>';
+        $page_content .= '<tr><td>ID</td><td>Username</td><td>Role</td><td>Actions</td></tr>';
 
         while ($user = $result->fetch_assoc()) {
             $page_content .= '<tr>';
@@ -39,9 +39,6 @@ if (isset($_SESSION['user_id'])) {
             $page_content .= '<td>' . htmlspecialchars($user['username']) . '</td>';
             $page_content .= '<td>' . htmlspecialchars($user['role']) . '</td>';
             $page_content .= '<td>';
-            // Add edit and delete buttons for each user
-            $page_content .= '<a class="button is-primary" href="edit_user.php?id=' . $user['id'] . '">Edit</a>';
-            $page_content .= '&nbsp;'; // Add a non-breaking space for spacing
             $page_content .= '<a class="button is-danger" href="delete_user.php?id=' . $user['id'] . '">Delete</a>';
             $page_content .= '</td>';
             $page_content .= '</tr>';

@@ -42,37 +42,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Form to add a new task
     $page_content = <<<EOT
-        <h1 class="title">Add Task</h1>
-        <form action="add_task.php" method="post">
-            <div class="field">
-                <label class="label">Task Name</label>
-                <div class="control">
-                    <input class="input" type="text" name="task_name" required>
+        <div class="columns is-centered">
+            <div class="column is-4">
+                <div class="box" style="background-color:#666666;">
+                    <h1 class="title" style="color:white;">Add Task</h1>
+                    <form action="add_task.php" method="post">
+                        <div class="field">
+                            <label class="label" style="color:white;">Task Name</label>
+                            <div class="control">
+                                <input class="input" type="text" name="task_name" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" style="color:white;">Task Description</label>
+                            <div class="control">
+                                <textarea class="textarea" name="task_description" required></textarea>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label" style="color:white;">Assign To</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select name="assigned_to" required>
+                                        <option value="" disabled selected>Select an Employee</option>
+                                        $employeeOptions
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary" type="submit">Add Task</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="field">
-                <label class="label">Task Description</label>
-                <div class="control">
-                    <textarea class="textarea" name="task_description" required></textarea>
-                </div>
-            </div>
-            <div class="field">
-                <label class="label">Assign To</label>
-                <div class="control">
-                    <div class="select">
-                        <select name="assigned_to" required>
-                            <option value="" disabled selected>Select an Employee</option>
-                            $employeeOptions
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    <button class="button is-primary" type="submit">Add Task</button>
-                </div>
-            </div>
-        </form>
+        </div>
 EOT;
 }
 

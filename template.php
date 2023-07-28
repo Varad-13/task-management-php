@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="css/bulma.min.css">
 </head>
 <body>
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <nav class="navbar" role="navigation" aria-label="main navigation" style="font-weight: bold; background-color: lightgray;">
         <div class="navbar-start">
             <!-- Add your navigation links here -->
             <a class="navbar-item" href="index.php">
                 Task Management System
             </a>
+        </div>
+        <div class="navbar-end">
             <?php
             // Check if the user is logged in (based on the session variable user_id)
             if (isset($_SESSION['user_id'])) {
@@ -29,14 +31,14 @@
         </div>
     </nav>
 
-    <section class="section">
-        <div class="container">
+    <section class="section" style="background-color:#f5f5f5; min-height: calc(100vh - 60px);">
+        <div class="container" >
             <?php echo $page_content; ?>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="content has-text-centered">
+    <footer class="footer" style="background-color:lightgray;">
+        <div class="content has-text-centered" >
             <p>
                 &copy; Task Management System.
             </p>

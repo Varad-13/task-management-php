@@ -2,19 +2,19 @@
 $page_title = 'Login';
 
 $page_content = <<<EOT
-    <h1 class="title">Login</h1>
-    <div class="columns is-centered">
-        <div class="column is-half">
-            <div class="box">
-                <form action="process_login.php" method="post">
+    <div class="columns is-centered style="width: 100%; transform: translateY(50%);"">
+        <div class="column is-4">
+            <div class="box" style="background-color:#666666;">
+                <h1 class="title" style="color:white;">Login</h1>
+                <form action="process_login.php"  method="post">
                     <div class="field">
-                        <label class="label">Username</label>
+                        <label class="label" style="color:white;">Username</label>
                         <div class="control">
                             <input class="input" type="text" name="username" required>
                         </div>
                     </div>
                     <div class="field">
-                        <label class="label">Password</label>
+                        <label class="label" style="color:white;">Password</label>
                         <div class="control">
                             <input class="input" type="password" name="password" required>
                         </div>

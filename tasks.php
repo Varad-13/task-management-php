@@ -66,13 +66,13 @@ if (isset($_SESSION['user_id'])) {
         $stmt->execute();
         $result = $stmt->get_result();
 
-        $tasks = '<section class = "section" style="min-height: calc(100vh - 60px);"><div class="columns is-multiline is-centered">';
+        $tasks = '<section class = "section"><div class="columns is-multiline is-centered">';
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $tasks .= '<div class="coulmn" style="margin-right: 0.4rem; margin-left: 0.4rem; margin-top: 0.4rem; margin-bottom: 0.4rem; display: flex; flex-direction: column; justify-content: space-between;">';
-                $tasks .= '<div class="box" style="min-height:18rem; min-width:18rem" >';
-                $tasks .= '<h3 class="title">' . htmlspecialchars($row['task_name']) . '</h3>';
+                $tasks .= '<div class="coulmn" style="margin-right: 0.4rem; margin-left: 0.4rem; margin-top: 0.4rem; margin-bottom: 0.4rem; display: flex; flex-direction: column; justify-content: space-between; color:white;">';
+                $tasks .= '<div class="box" style=" min-height:18rem; min-width:18rem; background-color:#666666; color:white; " >';
+                $tasks .= '<h3 class="title" style="color:white;">' . htmlspecialchars($row['task_name']) . '</h3>';
                 $tasks .= '<p class="content">' . htmlspecialchars($row['task_description']) . '</p>';
                 $tasks .= '<p class="content">Status: ' . htmlspecialchars($row['status']) . '</p>';
 
@@ -127,9 +127,9 @@ if (isset($_SESSION['user_id'])) {
     } else {
         // For admins and project managers, display all tasks
         $page_content = '<h1 class="title">All Tasks</h1>';
-        $page_content .= '<a href="add_task.php"> <button class="button is-primary">Add Task</button> </a>';
+        $page_content .= '<a href="add_task.php"> <button class="button is-primary" style="font-weight: bold;">Add Task</button> </a>';
         if ($user_role == 'admin') 
-            $page_content .= '<a href="manage_users.php"> <button class="button is-primary">Manage Users</button> </a>';
+            $page_content .= '<a href="manage_users.php"> <button class="button is-primary" style="font-weight: bold;">Manage Users</button> </a>';
         $page_content .= displayTasks($_SESSION['user_id'], $user_role);
     }
 } else {
